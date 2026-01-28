@@ -7,30 +7,61 @@
     <link rel="stylesheet" href=" Style.css">
 </head>
 <body>
-    <header>
+    <nav>
+        <ul class="navbar">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
+
+    <header id="top">
         <h1>Hello, I'm Providence Mupfunya</h1>
         <p>Welcome to my portfolio website! Glad to see you here.</p>
     </header>
 
-    <section class="about">
+    <section class="about" id="about">
         <h2>About me</h2>
         <p>I'm a software developer. I started coding in the FNB App Academy 2025!</p>
-
     </section>
 
-    <section class="projects">
-        <h2>Projects I've done.</h2>
-        <ul>
-            <li>Portfolio Website</li>
-            <li>Taxi App</li>
-            <li>Church App</li>
-            <li>Company Website</li>
-        </ul>
+    <section class="projects" id="projects">
+        <h2>Projects</h2>
+        <div class="project-list">
+
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>A personal portfolio website to showcase my projects and skills.</p>
+                <a href="https://providenceportfolio.netlify.app/">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Taxi App</h3>
+                <p>An app that connects passengers with nearby taxi drivers for convenient rides.</p>
+                <a href="#">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Church App</h3>
+                <p>An app designed to help church members stay connected and access church resources.</p>
+                <a href="#">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Company Website</h3>
+                <p>A professional website for a company to enhance its online presence.</p>
+                <a href="#">View Project</a>
+            </div>
+
+        </div>
     </section>
 
 
     <footer>
-        <p>Contact me on: +27 83 799 8674, Email: pmupfunya.pm@gmail.com</p>
+        <p>© 2026 Providence Mupfunya</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/providencem/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/ProM-coder" target="_blank">GitHub</a>
     </footer>
 </body>
 </html>
