@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Providence Mupfunya - Portfolio</title>
+    <script src="https://unpkg.com/typewriter-effect@2.18.2/dist/core.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #667eea;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            padding: 6rem 2rem;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #typewriter {
+            font-size: 3rem;
+            font-weight: bold;
+            min-height: 4rem;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            background: white;
+            margin: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            margin-bottom: 2rem;
+            color: #667eea;
+        }
+
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .project-card a:hover {
+            background: #764ba2;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="navbar">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
+
+    <header id="top">
+        <div id="typewriter"></div>
+        <p>Welcome to my digital space!</p>
+    </header>
+
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>I'm a software developer and designer. I started coding in 2025 and have been passionate about creating beautiful and functional web experiences ever since.</p>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2>Projects</h2>
+        <div class="project-list">
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>A personal portfolio website to showcase my projects and skills.</p>
+                <a href="https://providenceportfolio.netlify.app/">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Taxi App</h3>
+                <p>An app that connects passengers with nearby taxi drivers for convenient rides.</p>
+                <a href="#">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Church App</h3>
+                <p>An app designed to help church members stay connected and access church resources.</p>
+                <a href="#">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Company Website</h3>
+                <p>A professional website for a company to enhance its online presence.</p>
+                <a href="#">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Providence Mupfunya</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/providencem/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/ProM-coder" target="_blank">GitHub</a>
+        </div>
+    </footer>
+
+    <script>
+        const typewriter = new Typewriter(document.getElementById("typewriter"), {
+            loop: true,
+            delay: 75,
+        });
+        typewriter
+            .typeString("Hello, I'm Providence Mupfunya")
+            .pauseFor(1000)
+            .deleteAll()
+            .typeString("Full Stack Developer & Designer")
+            .pauseFor(1000)
+            .deleteAll()
+            .typeString("Welcome to my digital space!")
+            .pauseFor(1000)
+            .deleteAll()
+            .start();
+    </script>
+</body>
+</html>
