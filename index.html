@@ -1,222 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Providence Mupfunya - Portfolio</title>
-    <script src="https://unpkg.com/typewriter-effect@2.18.2/dist/core.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
-            min-height: 100vh;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        nav {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+  <title>Providence M | Full Stack Developer</title>
 
-        .navbar {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
+  <meta
+    name="description"
+    content="Providence Mupfunya Full Stack Developer Portfolio"
+  />
 
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+  <link rel="stylesheet" href="style.css"/>
 
-        .navbar a:hover {
-            color: #667eea;
-        }
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
 
-        header {
-            text-align: center;
-            color: white;
-            padding: 6rem 2rem;
-            min-height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #typewriter {
-            font-size: 3rem;
-            font-weight: bold;
-            min-height: 4rem;
-        }
-
-        header p {
-            font-size: 1.5rem;
-            margin-top: 1rem;
-            opacity: 0.9;
-        }
-
-        section {
-            padding: 4rem 2rem;
-            background: white;
-            margin: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        section h2 {
-            margin-bottom: 2rem;
-            color: #667eea;
-        }
-
-        .project-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            border: 1px solid #ddd;
-            padding: 1.5rem;
-            border-radius: 8px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-card h3 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-card a {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background: #667eea;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        .project-card a:hover {
-            background: #764ba2;
-        }
-
-        footer {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 2rem;
-        }
-
-        .social-links {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            color: #667eea;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: white;
-        }
-    </style>
 </head>
 
 <body>
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <div class="logo">
+      PM
+    </div>
+
     <nav>
-        <ul class="navbar">
-            <li><a href="#top">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-        </ul>
+
+      <ul class="nav-links">
+
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+
+      </ul>
+
     </nav>
 
-    <header id="top">
-        <div id="typewriter"></div>
-        <p>Welcome to my digital space!</p>
-    </header>
+    <div class="nav-actions">
 
-    <section class="about" id="about">
-        <h2>About Me</h2>
-        <p>I'm a software developer and designer. I started coding in 2025 and have been passionate about creating beautiful and functional web experiences ever since.</p>
-    </section>
+      <!-- THEME TOGGLE -->
 
-    <section class="projects" id="projects">
-        <h2>Projects</h2>
-        <div class="project-list">
-            <div class="project-card">
-                <h3>Portfolio Website</h3>
-                <p>A personal portfolio website to showcase my projects and skills.</p>
-                <a href="https://providenceportfolio.netlify.app/">View Project</a>
-            </div>
+      <div class="theme-switch">
 
-            <div class="project-card">
-                <h3>Taxi App</h3>
-                <p>An app that connects passengers with nearby taxi drivers for convenient rides.</p>
-                <a href="#">View Project</a>
-            </div>
+        <input type="checkbox" id="theme-toggle">
 
-            <div class="project-card">
-                <h3>Budget Tracker App</h3>
-                <p>An app designed to help users manage their finances and track their expenses.</p>
-                <a href="#">View Project</a>
-            </div>
+        <label for="theme-toggle" class="slider">
 
-            <div class="project-card">
-                <h3>Company Website</h3>
-                <p>A professional website for a company to enhance its online presence.</p>
-                <a href="#">View Project</a>
-            </div>
+          <span class="icon sun">☀️</span>
+
+          <span class="icon moon">🌙</span>
+
+        </label>
+
+      </div>
+
+      <a
+        href="https://linkedin.com"
+        target="_blank"
+        class="linkedin-btn"
+      >
+        LinkedIn
+      </a>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <p class="hero-subtitle">
+        FULL STACK SOFTWARE DEVELOPER
+      </p>
+
+      <h1>
+        Providence <br>
+        <span>Mupfunya</span>
+      </h1>
+
+      <p class="hero-description">
+
+        Building modern web applications, scalable software solutions and digital experiences using React, JavaScript, Node.js and modern frontend technologies.
+
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#projects" class="primary-btn">
+          View Projects
+        </a>
+
+        <a href="#quote" class="secondary-btn">
+          Request Quote
+        </a>
+
+      </div>
+
+      <div class="hero-tech">
+
+        <span>React</span>
+        <span>JavaScript</span>
+        <span>Node.js</span>
+        <span>MongoDB</span>
+        <span>Tailwind CSS</span>
+
+      </div>
+
+    </div>
+
+    <!-- PROFILE IMAGE -->
+
+    <div class="hero-image">
+
+      <div class="glow"></div>
+
+      <div class="image-card">
+
+        <img
+          src="Images/Picture (1).jpg"
+          alt="Providence M"
+        >
+
+        <div class="availability">
+          ● Available for opportunities
         </div>
-    </section>
 
-    <footer>
-        <p>© 2026 Providence Mupfunya</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/providencem/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/ProM-coder" target="_blank">GitHub</a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="section" id="about">
+
+    <p class="section-subtitle">
+      ABOUT ME
+    </p>
+
+    <h2>
+      Combining business thinking with modern software development.
+    </h2>
+
+    <p class="section-text">
+
+      I build scalable, responsive and visually modern applications designed to solve real business problems. My background in customer experience, administration and project coordination allows me to create technology solutions with both usability and business value in mind.
+
+    </p>
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section class="section" id="skills">
+
+    <p class="section-subtitle">
+      SKILLS
+    </p>
+
+    <h2>
+      Technologies & Tools
+    </h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+
+        <h3>Frontend</h3>
+
+        <p>
+          React, JavaScript, HTML5, CSS3, Tailwind CSS
+        </p>
+
+      </div>
+
+      <div class="skill-card">
+
+        <h3>Mobile Development</h3>
+
+        <p>
+          Java, React Native, Flutter
+        </p>
+
+      </div>
+
+      <div class="skill-card">
+
+        <h3>Backend</h3>
+
+        <p>
+          Node.js, Express.js, REST APIs
+        </p>
+
+      </div>
+
+      <div class="skill-card">
+
+        <h3>Database</h3>
+
+        <p>
+          MongoDB, MySQL, SQLite
+        </p>
+
+      </div>
+
+      <div class="skill-card">
+
+        <h3>Tools</h3>
+
+        <p>
+          Git, GitHub, Netlify, VS Code
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section class="section" id="projects">
+
+    <p class="section-subtitle">
+      FEATURED PROJECTS
+    </p>
+
+    <h2>
+      Selected Work
+    </h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+
+        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="project-content">
+
+          <h3>Interactive Dashboard</h3>
+
+          <p>
+            Real-time analytics dashboard with modern responsive UI and scalable backend integration.
+          </p>
+
+          <div class="project-tech">
+
+            <span>React</span>
+            <span>Node.js</span>
+            <span>MongoDB</span>
+
+          </div>
+
         </div>
-    </footer>
 
-    <script>
-        const typewriter = new Typewriter(document.getElementById("typewriter"), {
-            loop: true,
-            delay: 75,
-        });
-        typewriter
-            .typeString("Hello, I'm Providence Mupfunya")
-            .pauseFor(1000)
-            .deleteAll()
-            .typeString("Full Stack Developer specializing in modern web applications, business systems, and user-focused solutions.")
-            .pauseFor(1000)
-            .deleteAll()
-            .typeString("Welcome to my digital space!")
-            .pauseFor(1000)
-            .deleteAll()
-            .start();
-    </script>
+      </div>
+
+      <div class="project-card">
+
+        <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="project-content">
+
+          <h3>E-Commerce Platform</h3>
+
+          <p>
+            Modern full-stack e-commerce web application with authentication and payment integration.
+          </p>
+
+          <div class="project-tech">
+
+            <span>React</span>
+            <span>Express</span>
+            <span>Stripe</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section class="section" id="services">
+
+    <p class="section-subtitle">
+      SERVICES
+    </p>
+
+    <h2>
+      Software & Development Services
+    </h2>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+
+        <h3>Web Development</h3>
+
+        <p>
+          Responsive websites and frontend development using modern frameworks.
+        </p>
+
+      </div>
+
+      <div class="service-card">
+
+        <h3>Full Stack Development</h3>
+
+        <p>
+          Backend APIs, databases and complete scalable web application solutions.
+        </p>
+
+      </div>
+
+      <div class="service-card">
+
+        <h3>Business Solutions</h3>
+
+        <p>
+          Custom systems and workflow automation for businesses and startups.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- QUOTE -->
+
+  <section class="section quote-section" id="quote">
+
+    <p class="section-subtitle">
+      REQUEST A QUOTE
+    </p>
+
+    <h2>
+      Let's Build Your Project
+    </h2>
+
+    <form class="quote-form">
+
+      <input type="text" placeholder="Your Name">
+
+      <input type="email" placeholder="Your Email">
+
+      <textarea placeholder="Describe your project"></textarea>
+
+      <button type="submit" class="primary-btn">
+        Send Request
+      </button>
+
+    </form>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="section contact-section" id="contact">
+
+    <p class="section-subtitle">
+      CONTACT
+    </p>
+
+    <h2>
+      Let's Connect
+    </h2>
+
+    <div class="contact-links">
+
+      <a href="mailto:pmupfunya.pm@gmail.com">
+        Email
+      </a>
+
+      <a href="https://github.com/ProM-coder" target="_blank">
+        GitHub
+      </a>
+
+      <a href="https://www.linkedin.com/in/providence-mupfunya/" target="_blank">
+        LinkedIn
+      </a>
+
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+
 </body>
+
 </html>
