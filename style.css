@@ -1,9 +1,9 @@
 :root{
 
-  --bg:#020617;
-  --card:#0f172a;
+  --bg:#444d77;
+  --card:hwb(211 73% 9%);
   --text:#ffffff;
-  --secondary:#94a3b8;
+  --secondary:#dbe2ec;
   --accent:#3b82f6;
   --border:rgba(255,255,255,0.08);
 
@@ -57,7 +57,7 @@ html{
 
   backdrop-filter:blur(12px);
 
-  background:rgba(221, 221, 225, 0.65);
+  background:rgba(78, 111, 119, 0.65);
 
   border-bottom:1px solid var(--border);
 
