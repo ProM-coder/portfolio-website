@@ -1,34 +1,78 @@
-// Theme Toggle Functionality
+const themeToggle = document.getElementById('themeToggle');
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+const assistantToggle = document.getElementById('assistantToggle');
+const assistantPanel = document.getElementById('assistantPanel');
+const assistantClose = document.getElementById('assistantClose');
+const projectForm = document.getElementById('projectRequestForm');
+const formStatus = document.getElementById('formStatus');
 
-const themeToggle = document.getElementById('theme-toggle');
-const htmlElement = document.documentElement;
-
-// Initialize theme on page load
-function initializeTheme() {
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  
-  if (savedTheme === 'light') {
-    htmlElement.classList.add('light-mode');
-    themeToggle.checked = true;
-  } else {
-    htmlElement.classList.remove('light-mode');
-    themeToggle.checked = false;
+function loadTheme(){
+  const savedTheme = localStorage.getItem('portfolio-theme');
+  if(savedTheme === 'light'){
+    document.documentElement.classList.add('light-mode');
+    themeToggle.textContent = '☀️';
   }
 }
 
-// Handle theme toggle
-themeToggle.addEventListener('change', function() {
-  if (this.checked) {
-    htmlElement.classList.add('light-mode');
-    localStorage.setItem('theme', 'light');
-  } else {
-    htmlElement.classList.remove('light-mode');
-    localStorage.setItem('theme', 'dark');
-  }
+loadTheme();
+
+themeToggle?.addEventListener('click', () => {
+  document.documentElement.classList.toggle('light-mode');
+  const isLight = document.documentElement.classList.contains('light-mode');
+  localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
+  themeToggle.textContent = isLight ? '☀️' : '🌙';
 });
 
-// Initialize theme on page load
-document.addEventListener('DOMContentLoaded', initializeTheme);
+menuToggle?.addEventListener('click', () => navMenu.classList.toggle('open'));
+navMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navMenu.classList.remove('open')));
 
-// Also call it immediately in case DOM is already loaded
-initializeTheme();
+assistantToggle?.addEventListener('click', () => assistantPanel.classList.toggle('open'));
+assistantClose?.addEventListener('click', () => assistantPanel.classList.remove('open'));
+
+const revealItems = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+revealItems.forEach(item => observer.observe(item));
+
+/* EMAILJS SETUP
+   1. Create an EmailJS account.
+   2. Create an email service.
+   3. Create an email template with fields:
+      from_name, reply_to, company, project_type, budget_range, timeline, message
+   4. Replace the three placeholder values below.
+*/
+const EMAILJS_PUBLIC_KEY = 'YOUR_EMAILJS_PUBLIC_KEY';
+const EMAILJS_SERVICE_ID = 'YOUR_EMAILJS_SERVICE_ID';
+const EMAILJS_TEMPLATE_ID = 'YOUR_EMAILJS_TEMPLATE_ID';
+
+if(window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_EMAILJS_PUBLIC_KEY'){
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+}
+
+projectForm?.addEventListener('submit', function(event){
+  event.preventDefault();
+
+  if(!window.emailjs || EMAILJS_PUBLIC_KEY === 'YOUR_EMAILJS_PUBLIC_KEY'){
+    formStatus.textContent = 'EmailJS is not connected yet. Replace the keys in script.js first.';
+    return;
+  }
+
+  formStatus.textContent = 'Sending your request...';
+
+  emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+    .then(() => {
+      formStatus.textContent = 'Thank you. Your project request has been sent successfully.';
+      projectForm.reset();
+    })
+    .catch((error) => {
+      console.error('EmailJS error:', error);
+      formStatus.textContent = 'Something went wrong. Please try again or email me directly.';
+    });
+});
