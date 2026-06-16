@@ -1,4 +1,4 @@
-﻿:root{
+:root{
   --bg:#07111f;
   --bg-soft:#0d1b2d;
   --card:#10233a;
@@ -51,8 +51,8 @@ button,input,select,textarea{font:inherit}
 
 .section-tight,.section{padding:92px 7%}
 .hero{min-height:calc(100vh - 82px);display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:46px}
-.eyebrow{color:var(--accent-2);text-transform:uppercase;letter-spacing:.14em;font-size:16px;font-weight:900;margin-bottom:14px}
-h1{font-size:clamp(38px,6.2vw,70px);line-height:1.02;letter-spacing:-.055em;margin-bottom:22px}
+.eyebrow{color:var(--accent-2);text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:900;margin-bottom:14px}
+h1{font-size:clamp(42px,7vw,78px);line-height:1.02;letter-spacing:-.055em;margin-bottom:22px}
 h2{font-size:clamp(30px,4vw,50px);line-height:1.08;letter-spacing:-.04em;margin-bottom:16px}
 h3{font-size:22px;margin-bottom:10px}
 .hero-text{font-size:19px;color:var(--muted);max-width:720px;margin-bottom:28px}

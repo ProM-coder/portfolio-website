@@ -1,4 +1,4 @@
-const themeToggle = document.getElementById('themeToggle');
+﻿const themeToggle = document.getElementById('themeToggle');
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
 const assistantToggle = document.getElementById('assistantToggle');
@@ -48,18 +48,18 @@ revealItems.forEach(item => observer.observe(item));
       from_name, reply_to, company, project_type, budget_range, timeline, message
    4. Replace the three placeholder values below.
 */
-const EMAILJS_PUBLIC_KEY = 'YOUR_EMAILJS_PUBLIC_KEY';
-const EMAILJS_SERVICE_ID = 'YOUR_EMAILJS_SERVICE_ID';
-const EMAILJS_TEMPLATE_ID = 'YOUR_EMAILJS_TEMPLATE_ID';
+const EMAILJS_PUBLIC_KEY = 'hEhdSSHr1Zq48T4yf';
+const EMAILJS_SERVICE_ID = 'service_fp9axxm';
+const EMAILJS_TEMPLATE_ID = 'template_igcosms';
 
-if(window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_EMAILJS_PUBLIC_KEY'){
-  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+if(window.emailjs && EMAILJS_PUBLIC_KEY !== 'hEhdSSHr1Zq48T4yf'){
+  emailjs.init({ publicKey: hEhdSSHr1Zq48T4yf});
 }
 
 projectForm?.addEventListener('submit', function(event){
   event.preventDefault();
 
-  if(!window.emailjs || EMAILJS_PUBLIC_KEY === 'YOUR_EMAILJS_PUBLIC_KEY'){
+  if(!window.emailjs || EMAILJS_PUBLIC_KEY === 'hEhdSSHr1Zq48T4yf'){
     formStatus.textContent = 'EmailJS is not connected yet. Replace the keys in script.js first.';
     return;
   }
