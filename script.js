@@ -41,26 +41,20 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 revealItems.forEach(item => observer.observe(item));
 
-/* EMAILJS SETUP
-   1. Create an EmailJS account.
-   2. Create an email service.
-   3. Create an email template with fields:
-      from_name, reply_to, company, project_type, budget_range, timeline, message
-   4. Replace the three placeholder values below.
-*/
+/* EMAILJS SETUP - Connected and configured */
 const EMAILJS_PUBLIC_KEY = 'hEhdSSHr1Zq48T4yf';
 const EMAILJS_SERVICE_ID = 'service_fp9axxm';
 const EMAILJS_TEMPLATE_ID = 'template_igcosms';
 
-if(window.emailjs && EMAILJS_PUBLIC_KEY !== 'hEhdSSHr1Zq48T4yf'){
-  emailjs.init({ publicKey: hEhdSSHr1Zq48T4yf});
+if(window.emailjs){
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 }
 
 projectForm?.addEventListener('submit', function(event){
   event.preventDefault();
 
-  if(!window.emailjs || EMAILJS_PUBLIC_KEY === 'hEhdSSHr1Zq48T4yf'){
-    formStatus.textContent = 'EmailJS is not connected yet. Replace the keys in script.js first.';
+  if(!window.emailjs){
+    formStatus.textContent = 'Email service is not available. Please try again later.';
     return;
   }
 
