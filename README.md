@@ -15,7 +15,6 @@ Software Developer + Business Solutions Consultant.
 - Light/dark mode
 - Mobile responsive design
 
-
 # Calendly
 The booking button uses:
 https://calendly.com/pmupfunya-pm/30min
